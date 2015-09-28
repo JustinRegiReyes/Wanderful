@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+  	<ul class="nav navbar-nav">
+  		<% if @current_user %>
+	  		<li><%= link_to 'Home', "/users/#{@user.id}" %></li>
+	  		<li><%= link_to 'Logout', '/sessions/destroy' %></li>
+  		<% else %>
+	  		<li><%= link_to 'Sign Up', '/users/new' %></li>
+	  		<li><%= link_to 'Login', '/sessions/new' %></li>
+  		<% end %>
+  	</ul>
+  </div>
+</nav>
+
+

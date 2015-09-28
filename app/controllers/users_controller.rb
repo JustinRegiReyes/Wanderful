@@ -24,5 +24,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    # @current_user = current_user
   end
 end
