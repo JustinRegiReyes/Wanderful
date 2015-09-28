@@ -1,4 +1,3 @@
-#sharon is here, correctly this time!!
 class UsersController < ApplicationController
   def index
     @users = User.all
@@ -27,7 +26,3 @@ class UsersController < ApplicationController
     @user = User.new
   end
 end
-
-
-# Where will this go when I push to github
-#this is sarad
