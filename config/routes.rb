@@ -1,24 +1,33 @@
 Rails.application.routes.draw do
 
-  get 'users', to: "users#index"
-
    root to: "welcome#index"
 
-  get 'users/index'
+   get 'users', to: "users#index"
 
-  get 'users/show'
+   get '/users/new', to: "users#new", as: "sign_up"
 
-  get 'users/edit'
+   post "/users", to: "users#create"
 
-  get 'users/create'
+   get "/users/:id", to: "users#show", as: "profile"
 
-  get 'users/update'
+   get 'users/index'
 
-  get 'users/destroy'
+   get 'users/show'
 
-  get 'users/new', to: "users#new"
+   get 'users/edit'
 
-  post "/users", to: "users#create"
+   get 'users/create'
+
+   get 'users/update'
+
+   get 'users/destroy'
+
+
+
+      #sessions routes
+   get "/sessions/new", to: "sessions#new", as: "login"
+
+   post "/sessions", to: "sessions#create"
 
 
 end

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
     @user = User.create(user_params)
 
-    redirect_to "/users"
+    redirect_to "/users/#{@user.id}"
   end
 
   def update
