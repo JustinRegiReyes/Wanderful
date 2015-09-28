@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
    end
 
    def create
-      @user = User.confirm(params[:user])
+      @user = User.find_by(params[:email])
+      #@user.confirm(params[:password])
       if @user
          login(@user)
          redirect_to "/users/#{@user.id}"
