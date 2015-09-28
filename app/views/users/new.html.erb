@@ -1,2 +1,11 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+Sign Up
+
+<%= form_for @user do |f| %>
+	<%=	f.text_field :first_name, placeholder: "First Name" %>
+	<%= f.text_field :last_name, placeholder: "Last Name" %>
+	<%= f.text_field :username, placeholder: "Usernmame" %>
+	<%= f.email_field :email, placeholder: "email" %>
+	<%= f.password_field :password, placeholder: "password" %>
+<%= f.submit "Sign up" %>
+
+<% end %>
