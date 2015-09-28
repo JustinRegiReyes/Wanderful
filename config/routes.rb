@@ -20,5 +20,8 @@ Rails.application.routes.draw do
 
   post "/users", to: "users#create"
 
+  get "/users/:id/edit", to: "users#edit", as: "user"
+
+  patch "/users/:id/edit", to: "users#update"
 
 end
