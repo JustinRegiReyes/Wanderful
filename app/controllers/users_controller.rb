@@ -1,4 +1,3 @@
-#sharon is here, correctly this time!!
 class UsersController < ApplicationController
   def index
   end
@@ -21,7 +20,3 @@ class UsersController < ApplicationController
   def new
   end
 end
-
-
-# Where will this go when I push to github
-#this is sarad
