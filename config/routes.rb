@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users', to: "users#index"
+
    root to: "welcome#index"
 
   get 'users/index'
@@ -14,7 +16,9 @@ Rails.application.routes.draw do
 
   get 'users/destroy'
 
-  get 'users/new'
+  get 'users/new', to: "users#new"
+
+  post "/users", to: "users#create"
 
 
 end
