@@ -9,6 +9,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+ 
+    id = params[:id]
+    @user = User.find_by_id(id)
   end
 
   def create
@@ -19,6 +22,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    
+    user_id = params[:id]
+    user = User.find_by_id(user_id)
+
+    updated_attributes = params.require(:user).permit(:first_name, :last_name, :username)
+    user.update_attributes(updated_attributes)
+    redirect_to "/users/#{user_id}"
   end
 
   def destroy

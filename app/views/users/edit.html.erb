@@ -1,4 +1,12 @@
-<%= render 'shared/navbar' %>
 
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= render 'shared/navbar' %>
+<%= form_for @user, method:"patch" do |f| %>
+	<%=	f.text_field :first_name %>
+	<%= f.text_field :last_name %>
+ 	<%= f.text_field :username %>
+	 
+<%= f.submit "Update user profile" %>
+
+<% end %>
+
+
