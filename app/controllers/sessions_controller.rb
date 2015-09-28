@@ -6,13 +6,14 @@ class SessionsController < ApplicationController
    end
 
    def create
-      @user = User.find_by_email(params[:email])
-      if @user
-         login(@user)
-         redirect_to "/users/#{@user.id}"
-      else
-         redirect_to "/users/new"
-      end
+      binding.pry
+      # @user = User.find_by_email(params[:email])
+      # if @user
+      #    login(@user)
+      #    redirect_to "/users/#{@user.id}"
+      # else
+      #    redirect_to "/users/new"
+      # end
    end
 
    def destroy
