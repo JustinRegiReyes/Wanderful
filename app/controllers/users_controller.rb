@@ -1,4 +1,4 @@
-#sharon is here
+#sharon is here, correctly this time!!
 class UsersController < ApplicationController
   def index
   end
