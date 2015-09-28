@@ -20,3 +20,6 @@ class UsersController < ApplicationController
   def new
   end
 end
+
+
+# Where will this go when I push to github
