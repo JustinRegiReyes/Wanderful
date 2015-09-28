@@ -1,5 +1,5 @@
-Edit
 
+<%= render 'shared/navbar' %>
 <%= form_for @user, method:"patch" do |f| %>
 	<%=	f.text_field :first_name %>
 	<%= f.text_field :last_name %>
@@ -8,3 +8,5 @@ Edit
 <%= f.submit "Update user profile" %>
 
 <% end %>
+
+
