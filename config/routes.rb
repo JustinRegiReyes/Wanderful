@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'cities/index', to: 'cities#index'
+
+  get 'cities/new', to: 'cities#new'
+
+  get 'cities/create', to: 'cities#create'
+
+  get 'cities/show', to: 'cities#show'
+
+  get 'cities/edit'
+
+  get 'cities/update' 
+
+  get 'cities/destroy'
+  
    root to: "welcome#index"
 
    get 'users', to: "users#index"
