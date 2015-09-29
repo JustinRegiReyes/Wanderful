@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
    get 'users/destroy'
 
+   get 'posts/:id', to: "posts#show", as: "post"
+
 
 
       #sessions routes
