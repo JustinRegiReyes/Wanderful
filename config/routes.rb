@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'cities/index', to: 'cities#index'
 
-  get 'cities/new', to: 'cities#new'
 
-  get 'cities/create', to: 'cities#create'
+
 
   get 'cities/:id', to: 'cities#show'
 
   get 'cities/edit'
 
-  get 'cities/update' 
+  get 'cities/update'
 
   get 'cities/destroy'
+
 
    root to: "welcome#index"
 
@@ -36,7 +35,17 @@ Rails.application.routes.draw do
 
    get 'users/destroy'
 
+   get 'cities/index', to: 'cities#index'
 
+   get 'cities/new', to: 'cities#new'
+
+   get 'cities/create', to: 'cities#create'
+
+   get 'cities/edit'
+
+   get 'cities/update'
+
+   get 'cities/destroy'
 
    #sessions routes
    get "/sessions/new", to: "sessions#new", as: "login"
