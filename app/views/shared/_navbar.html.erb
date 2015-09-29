@@ -2,6 +2,7 @@
   <div class="container">
   	<ul class="nav navbar-nav">
   		<% if @current_user %>
+      <!-- *** Is 'Home' supposed to link back to the user profile? -->
 	  		<li><%= link_to 'Home', "/users/#{@user.id}" %></li>
 	  		<li><%= link_to 'Logout', '/sessions/destroy' %></li>
   		<% else %>
@@ -11,5 +12,3 @@
   	</ul>
   </div>
 </nav>
-
-
