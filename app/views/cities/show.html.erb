@@ -14,8 +14,9 @@
 			<div class="panel-body">
 				<% @city.posts.each do |post| %>
 				<div>
-					<a href="/posts/#{post.id}/show"><h4> <%= post.title %> </h4></a>
-					<br>
+					<a href="/posts/<%= post.id %>"><h4> <%= post.title %> </h4></a>
+
+
 					<p> <%= post.content %>	</p>
 				</div>
 				<% end %>
