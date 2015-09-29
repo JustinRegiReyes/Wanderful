@@ -5,6 +5,10 @@ class LogsController < ApplicationController
       @log = Log.new
    end
 
+   def index
+      @logs = Log.all
+   end
+
    def create
       logInfo = params.require(:log).permit(:title, :content)
       cityName = params[:log][:city]
