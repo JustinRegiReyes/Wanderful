@@ -3,6 +3,16 @@ Rails.application.routes.draw do
 
 
 
+
+  get 'cities/:id', to: 'cities#show'
+
+  get 'cities/edit'
+
+  get 'cities/update'
+
+  get 'cities/destroy'
+
+
    root to: "welcome#index"
 
    get 'users', to: "users#index"
@@ -30,8 +40,6 @@ Rails.application.routes.draw do
    get 'cities/new', to: 'cities#new'
 
    get 'cities/create', to: 'cities#create'
-
-   get 'cities/show', to: 'cities#show'
 
    get 'cities/edit'
 

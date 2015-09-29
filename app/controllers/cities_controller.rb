@@ -10,6 +10,9 @@ class CitiesController < ApplicationController
   end
 
   def show
+    id = params[:id]
+    @city = City.find_by_id(id)
+    render :show
   end
 
   def edit
