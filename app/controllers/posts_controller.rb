@@ -1,7 +1,7 @@
-module ArticlesHelper
+class PostsController < ApplicationController
 
    def new
-      @article = Article.new
+      @post = Post.new
    end
 
    def create
