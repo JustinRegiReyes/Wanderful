@@ -1,8 +1,29 @@
-<h1><%= @city.name %></h1>
+<div class="container">
+	<div class="page-header">
+		<header>
+			<h1> <%= @city.name %> </h1>
+		</header>
+	</div>
 
-<h2>Logs</h2>
-<% @city.logs.each do |log| %>
-<div><%= log.title %><br>
-	<%= log.content %>	
+<div class="page-container">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h2>Travel Logs</h2>
+			</div>
+
+			<div class="panel-body">
+				<% @city.logs.each do |log| %>
+				<% @user = User.find_by_id(log.user_id) %>
+				<div>
+					<a href="/posts/<%= log.id %>"><h4> <%= log.title %> </h4></a>
+
+					<h5> By: <%= @user.first_name %> <%= @user.last_name[0] %>. </h5>
+
+					<p> <%= log.content %>	</p>
+				</div>
+				<% end %>
+			</div>
+		</div>
+
+	</div>
 </div>
-<% end %>

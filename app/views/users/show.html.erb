@@ -1,5 +1,5 @@
 
-<%= render 'shared/navbar' %>
+
 <div class="container">
 
 
@@ -30,7 +30,7 @@
                <% @user.logs.each do |log| %>
                <li>
                   <div>
-                     <h3><%= log.title %> </h3>
+                     <a href="/logs/<%= log.id %>"><h3> <%= log.title %> </h3></a>
                      <p> <%= log.content %> </p>
                   </div>
                </li>
