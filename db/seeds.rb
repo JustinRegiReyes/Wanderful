@@ -20,9 +20,10 @@ City.delete_all
 end
 
 50.times do ||
-  log = Log.create( user_id: rand(1 .. 50),
+  log = Log.create(
       content:FFaker::HipsterIpsum::paragraph,
       title: FFaker::DizzleIpsum::word,
       )
   City.find_by_id(rand(1 .. 50)).logs << log
+  User.find_by_id(rand(1 .. 50)).logs << log
 end

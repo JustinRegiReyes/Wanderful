@@ -1,11 +1,14 @@
 
-<%= form_for @post do |p| %>
+<%= form_for @log do |f| %>
 
-<%= p.text_field :title, placeholder: "City Name" %><br><br>
 
-<%= p.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %><br>
+<%= f.text_field :city, placeholder: "City" %>
 
-<%= p.submit "Post" %>
+<%= f.text_field :title, placeholder: "Title" %><br><br>
+
+<%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %><br>
+
+<%= f.submit "Post" %>
 
 <% end %>
 
