@@ -49,6 +49,12 @@ Rails.application.routes.draw do
    patch "/users/:id/edit", to: "users#update"
 
    #posts routes
+   
+
    get "/posts/:id/show", to: "posts#show"
+
+   get '/posts/new', to: 'posts#new'
+
+   post '/posts', to: 'posts#create'
 
 end
