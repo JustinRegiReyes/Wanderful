@@ -12,6 +12,10 @@ class LogsController < ApplicationController
       @city = City.find_by_id(params[:id])
    end
 
+   def index
+      @logs = Log.all
+   end
+
    def create
       # binding.pry
 
@@ -29,9 +33,15 @@ class LogsController < ApplicationController
    end
 
    def show
+
    	@current_user = current_user
       @user = current_user
    	@log = Log.find(params[:id])
+
+      @authors = User.all
+      author_id = @log.user_id
+      @author = @authors.find(author_id)
+
    end
 
 end
