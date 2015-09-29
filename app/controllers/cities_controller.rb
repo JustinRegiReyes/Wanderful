@@ -3,6 +3,7 @@ class CitiesController < ApplicationController
   end
 
   def new
+    @cities = City.all
   end
 
   def create

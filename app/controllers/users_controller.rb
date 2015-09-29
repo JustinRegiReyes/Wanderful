@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    
     user_id = params[:id]
     user = User.find_by_id(user_id)
 
