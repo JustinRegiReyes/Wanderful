@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'cities/index', to: 'cities#index'
+
+  get 'cities/new', to: 'cities#new'
+
+  get 'cities/create', to: 'cities#create'
+
+  get 'cities/show', to: 'cities#show'
+
+  get 'cities/edit'
+
+  get 'cities/update' 
+
+  get 'cities/destroy'
+  
    root to: "welcome#index"
 
    get 'users', to: "users#index"
@@ -24,13 +38,15 @@ Rails.application.routes.draw do
 
 
 
-      #sessions routes
+   #sessions routes
    get "/sessions/new", to: "sessions#new", as: "login"
 
    post "/sessions", to: "sessions#create"
 
-  get "/users/:id/edit", to: "users#edit", as: "user"
+   delete "/sessions/destroy", to: "sessions#destroy", as: "logout"
 
-  patch "/users/:id/edit", to: "users#update"
+   get "/users/:id/edit", to: "users#edit", as: "user"
+
+   patch "/users/:id/edit", to: "users#update"
 
 end

@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
    end
 
    def create
-      @user = User.find_by(params[:email])
-      #@user.confirm(params[:password])
+      # binding.pry
+      @user = User.find_by_email(params[:user][:email])
       if @user
          login(@user)
          redirect_to "/users/#{@user.id}"
@@ -17,6 +17,9 @@ class SessionsController < ApplicationController
    end
 
    def destroy
+      # binding.pry
+      logout
+      redirect_to root_path
    end
 
 end
