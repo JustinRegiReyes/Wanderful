@@ -1,1 +1,15 @@
-new.html.erb
+
+<%= form_for @log do |f| %>
+
+
+<%= f.text_field :city, placeholder: "City" %>
+
+<%= f.text_field :title, placeholder: "Title" %><br><br>
+
+<%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %><br>
+
+<%= f.submit "Post" %>
+
+<% end %>
+
+

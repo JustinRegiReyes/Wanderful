@@ -52,6 +52,10 @@ Rails.application.routes.draw do
    patch "/users/:id/edit", to: "users#update"
 
    #posts routes
+   get "/logs/new", to: "logs#new"
+
    get "/logs/:id", to: "logs#show"
+
+   post '/logs', to: 'logs#create'
 
 end
