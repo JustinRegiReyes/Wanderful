@@ -55,6 +55,6 @@ Rails.application.routes.draw do
 
    get "/logs/:id", to: "logs#show"
 
-   post '/posts', to: 'posts#create'
+   post '/logs', to: 'logs#create'
 
 end
