@@ -27,11 +27,11 @@
       <div class="panel-body">
          <div>
             <ul>
-               <% @user.posts.each do |post| %>
+               <% @user.logs.each do |log| %>
                <li>
                   <div>
-                     <a href="/posts/<%= post.id %>"><h3> <%= post.title %> </h3></a>
-                     <p> <%= post.content %> </p>
+                     <a href="/posts/<%= post.id %>"><h3> <%= log.title %> </h3></a>
+                     <p> <%= log.content %> </p>
                   </div>
                </li>
                <% end %>

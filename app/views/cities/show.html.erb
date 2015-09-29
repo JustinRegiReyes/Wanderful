@@ -12,14 +12,14 @@
 			</div>
 
 			<div class="panel-body">
-				<% @city.posts.each do |post| %>
-				<% @user = User.find_by_id(post.user_id) %>
+				<% @city.logs.each do |log| %>
+				<% @user = User.find_by_id(log.user_id) %>
 				<div>
-					<a href="/posts/<%= post.id %>"><h4> <%= post.title %> </h4></a>
+					<a href="/posts/<%= log.id %>"><h4> <%= log.title %> </h4></a>
 
 					<h5> By: <%= @user.first_name %> <%= @user.last_name[0] %>. </h5>
 
-					<p> <%= post.content %>	</p>
+					<p> <%= log.content %>	</p>
 				</div>
 				<% end %>
 			</div>
