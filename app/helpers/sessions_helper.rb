@@ -12,10 +12,10 @@ module SessionsHelper
    end
 
    def current_user
-      @current_user = @current_user ||= User.find(session[:user_id])
+      @current_user = @current_user ||= User.find_by_id(session[:user_id])
    end
 
    def logout
-      @curent_user = sessions[:user_id] = nil
+      @curent_user = session[:user_id] = nil
    end
 end
