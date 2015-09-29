@@ -39,13 +39,15 @@ Rails.application.routes.draw do
 
    get 'cities/destroy'
 
-      #sessions routes
+   #sessions routes
    get "/sessions/new", to: "sessions#new", as: "login"
 
    post "/sessions", to: "sessions#create"
 
-  get "/users/:id/edit", to: "users#edit", as: "user"
+   delete "/sessions/destroy", to: "sessions#destroy", as: "logout"
 
-  patch "/users/:id/edit", to: "users#update"
+   get "/users/:id/edit", to: "users#edit", as: "user"
+
+   patch "/users/:id/edit", to: "users#update"
 
 end
