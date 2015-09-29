@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
    get 'users/destroy'
 
-   get 'posts/:id', to: "posts#show", as: "post"
+   get 'logs/:id', to: "logs#show", as: "log"
 
 
 
