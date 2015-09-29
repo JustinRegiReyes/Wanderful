@@ -21,9 +21,7 @@ Rails.application.routes.draw do
 
    get 'users/destroy'
 
-
    get 'cities/index', to: 'cities#index'
-
 
    get 'cities/new', to: 'cities#new'
 
@@ -50,7 +48,7 @@ Rails.application.routes.draw do
 
    patch "/users/:id/edit", to: "users#update"
 
-   #posts routes
-   get "/posts/:id/show", to: "posts#show"
+   #logs routes
+   get "/logs/:id/show", to: "logs#show"
 
 end
