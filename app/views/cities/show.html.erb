@@ -1,8 +1,26 @@
-<h1><%= @city.name %></h1>
+<div class="container">
+	<div class="page-header">
+		<header>
+			<h1> <%= @city.name %> </h1>
+		</header>
+	</div>
 
-<h2>Logs</h2>
-<% @city.posts.each do |post| %>
-<div><%= post.title %><br>
-	<%= post.content %>	
+	<div class="page-container">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h2>Travel Logs</h2>
+			</div>
+
+			<div class="panel-body">
+				<% @city.posts.each do |post| %>
+				<div>
+					<a href="/posts/#{post.id}/show"><h4> <%= post.title %> </h4></a>
+					<br>
+					<p> <%= post.content %>	</p>
+				</div>
+				<% end %>
+			</div>
+		</div>
+
+	</div>
 </div>
-<% end %>
