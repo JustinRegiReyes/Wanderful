@@ -1,18 +1,18 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Wanderful</a>
-      <ul class="nav navbar-nav">
-      <% if @current_user %>
-      <!-- *** Is 'Home' supposed to link back to the user profile? -->
-        <li><%= link_to 'Home', "/users/#{@current_user.id}" %></li>
-        <li><%= link_to 'Logout', logout_path, method: 'delete'  %></li>
-      <% else %>
-        <li><%= link_to 'Sign Up', '/users/new'%></li>
-        <li><%= link_to 'Login', '/sessions/new' %></li>
-      <% end %>
-    
-    </ul>
-    </div>
-  </div>
+   <div class="container-fluid">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="/">Wanderful</a>
+         <ul class="nav navbar-nav">
+            <% if @current_user %>
+               <li><%= link_to 'Home', "/users/#{@current_user.id}" %></li>
+               <li><%= link_to 'Logout', logout_path, method: 'delete'  %></li>
+            <% else %>
+               <li><%= link_to 'Sign Up', '/users/new'%></li>
+               <li><%= link_to 'Login', '/sessions/new' %></li>
+            <% end %>
+               <li><%= link_to 'City List', '/cities/index' %></li>
+               <li><%= link_to 'Travel Logs', '/logs/index' %></li>
+         </ul>
+      </div>
+   </div>
 </nav>
