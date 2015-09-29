@@ -13,6 +13,8 @@ class CitiesController < ApplicationController
   def show
     id = params[:id]
     @city = City.find_by_id(id)
+    @current_user = current_user
+    @user = current_user
     render :show
   end
 
