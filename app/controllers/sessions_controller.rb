@@ -5,18 +5,21 @@ class SessionsController < ApplicationController
       render :new
    end
 
-   def create
-      @user = User.find_by(params[:email])
-      #@user.confirm(params[:password])
+   def create # login
+      # binding.pry
+      @user = User.find_by_email(params[:user][:email])
       if @user
          login(@user)
-         redirect_to "/users/#{@user.id}"
+         redirect_to profile_path(@user.id)
       else
          redirect_to "/users/new"
       end
    end
 
    def destroy
+      # binding.pry
+      logout
+      redirect_to root_path
    end
 
 end

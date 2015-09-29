@@ -1,10 +1,34 @@
-Edit
 
-<%= form_for @user, method:"patch" do |f| %>
-	<%=	f.text_field :first_name %>
-	<%= f.text_field :last_name %>
- 	<%= f.text_field :username %>
-	 
-<%= f.submit "Update user profile" %>
 
-<% end %>
+<div class="container">
+	<div class="page-header">
+		<header>
+			<h1>Edit Profile</h1>
+		</header>
+	</div>
+
+	<div class="body-content">
+		<div id="form-wrapper">
+			<%= form_for @user, method:"patch" do |f| %>
+			<div>
+				<%=	f.text_field :first_name, placeholder: "First Name" %>
+			</div>
+			<div>
+				<%= f.text_field :last_name, placeholder: "Last Name" %>
+			</div>
+			<div>
+			 	<%= f.text_field :username, placeholder: "Username" %>
+			</div>
+			<div>
+			 	<%= f.text_field :current_city, placeholder: "Current Location" %>
+			</div>
+			<br>
+			<div>
+				<%= f.submit "Update user profile" %>
+			</div>
+
+
+			<% end %>
+		</div>
+	</div>
+</div>
