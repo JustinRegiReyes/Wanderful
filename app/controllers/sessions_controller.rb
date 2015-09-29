@@ -17,6 +17,9 @@ class SessionsController < ApplicationController
    end
 
    def destroy
+      # binding.pry
+      logout
+      redirect_to root_path
    end
 
 end
