@@ -1,18 +1,4 @@
 Rails.application.routes.draw do
-
-
-
-
-
-  get 'cities/:id', to: 'cities#show'
-
-  get 'cities/edit'
-
-  get 'cities/update'
-
-  get 'cities/destroy'
-
-
    root to: "welcome#index"
 
    get 'users', to: "users#index"
@@ -46,6 +32,8 @@ Rails.application.routes.draw do
    get 'cities/update'
 
    get 'cities/destroy'
+   
+  get 'cities/:id', to: 'cities#show'
 
    #sessions routes
    get "/sessions/new", to: "sessions#new", as: "login"
