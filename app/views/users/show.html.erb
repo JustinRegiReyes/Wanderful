@@ -8,3 +8,16 @@
 <div>
 <!-- this is where our location will be listed -->
 </div>
+
+<div>
+   <ul>
+      <% @user.posts.each do |post| %>
+      <li>
+         <div>
+            <h3><%= post.title %> </h3>
+            <p> <%= post.content %> </p>
+         </div>
+      </li>
+      <% end %>
+   </ul>
+</div>
