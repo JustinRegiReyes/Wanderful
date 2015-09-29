@@ -1,8 +1,10 @@
 
+
 require 'ffaker'
 
 User.delete_all
 Post.delete_all
+City.delete_all
 
  50.times do ||
   User.create( first_name: FFaker::Name::first_name,
