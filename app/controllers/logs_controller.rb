@@ -6,7 +6,6 @@ class LogsController < ApplicationController
    end
 
    def create
-      binding.pry
       logInfo = params.require(:log).permit(:title, :content)
       cityName = params[:log][:city]
       city = City.find_by_name(cityName)
