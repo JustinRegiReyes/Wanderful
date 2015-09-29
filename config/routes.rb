@@ -6,14 +6,14 @@ Rails.application.routes.draw do
 
   get 'cities/create', to: 'cities#create'
 
-  get 'cities/show', to: 'cities#show'
+  get 'cities/:id', to: 'cities#show'
 
   get 'cities/edit'
 
   get 'cities/update' 
 
   get 'cities/destroy'
-  
+
    root to: "welcome#index"
 
    get 'users', to: "users#index"
