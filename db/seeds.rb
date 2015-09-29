@@ -1,9 +1,8 @@
 
-
 require 'ffaker'
 
 User.delete_all
-Post.delete_all
+Log.delete_all
 City.delete_all
 
 50.times do ||
@@ -21,11 +20,9 @@ City.delete_all
 end
 
 50.times do ||
-  post = Post.create( user_id: rand(1 .. 50),
+  log = Log.create( user_id: rand(1 .. 50),
       content:FFaker::HipsterIpsum::paragraph,
       title: FFaker::DizzleIpsum::word,
       )
-  City.find_by_id(rand(1 .. 50)).posts << post
+  City.find_by_id(rand(1 .. 50)).logs << log
 end
-
-

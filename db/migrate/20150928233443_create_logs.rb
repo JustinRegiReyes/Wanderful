@@ -1,6 +1,6 @@
-class CreatePosts < ActiveRecord::Migration
+class CreateLogs < ActiveRecord::Migration
   def change
-    create_table :posts do |t|
+    create_table :logs do |t|
       t.string :title
       t.string :content
 

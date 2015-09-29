@@ -51,7 +51,11 @@ Rails.application.routes.draw do
    #posts routes
    
 
-   get "/posts/:id/show", to: "posts#show"
+
+
+   #logs routes
+   get "/logs/:id/show", to: "logs#show"
+
 
    get '/posts/new', to: 'posts#new'
 
