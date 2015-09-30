@@ -24,6 +24,6 @@
 				<% end %>
 			</div>
 		</div>
-		<a href="/cities/<%= @city.id %>/logs/new" class="button btn btn-bar btn-default">Create a log for <%= @city.name %></a>
+		<%= link_to("Post", city_log_new_path(@city)) %>
 	</div>
 </div>

@@ -7,21 +7,15 @@
 
    <div class="page-wrapper">
       <div class="panel panel-info">
-         <div class="panel-heading">
-            <%= form_for @log, url: "/cities/#{@city.id}/logs/new", method: "post" do |f| %>
-            <div>
-               <%= f.text_field :title, placeholder: "Title" %>
+         <%= form_for @log, url: "/cities/#{@city.id}/logs/new", method: "post" do |f| %>
+            <div class="panel-heading">
+            <%= f.text_field :title, placeholder: "Title" %>
             </div>
-         </div>
-         <div class="panel-body">
-            <div>
-               <%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %>
+            <div class="panel-body">
+            <%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %>
             </div>
-            <div>
-               <%= f.submit "Post" %>
-            </div>
-            <% end %>
-         </div>
+            <%= f.submit "Post" %>
+         <% end %>
       </div>
    </div>
 </div>
