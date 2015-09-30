@@ -8,24 +8,30 @@ class LogsController < ApplicationController
 
    def index
       @user = current_user
-      @logs = Log.all
+      @logs = Log.all.order("id DESC")
    end
 
    def create
-      # binding.pry
 
-      logInfo = params.require(:log).permit(:title, :content, :address)
-      city = City.find_by_id(params[:id])
-      user = current_user
-      log = Log.create(logInfo)
-      city.logs << log
-      user.logs << log
-      redirect_to "/cities/#{city.id}"
+      logInfo = params.require(:log).permit(:title, :content)
+      @city = City.find_by_id(params[:id])
+      
+      @user = current_user
+
+      @log = Log.new(logInfo)
+      if @log.save
+        @city.logs << @log
+        @user.logs << @log
+        redirect_to "/cities/#{@city.id}"
+      else
+        render :new
+      end
    end
 
    def edit
       id = params[:id]
-    @log = Log.find_by_id(id)
+      @log = Log.find_by_id(id)
+      # @log = Log.all
     @city = City.find_by_id(@log.city_id)
 
    end
@@ -58,9 +64,9 @@ class LogsController < ApplicationController
       @authors = User.all
       author_id = @log.user_id
       @author = @authors.find(author_id)
-
-
-
    end
 
 end
+
+
+
