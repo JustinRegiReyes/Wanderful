@@ -20,6 +20,23 @@ class LogsController < ApplicationController
       redirect_to "/cities/#{city.id}"
    end
 
+   def edit
+      id = params[:id]
+    @log = Log.find_by_id(id)
+    @city = City.find_by_id(@log.city_id)
+
+   end
+
+   def update
+    log_id = params[:id]
+    log = Log.find_by_id(log_id)
+
+    updated_attributes = params.require(:log).permit(:title, :content)
+    log.update_attributes(updated_attributes)
+    redirect_to "/logs/#{log_id}"
+
+   end
+
    def destroy
    end
 
