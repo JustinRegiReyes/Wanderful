@@ -38,6 +38,12 @@ class LogsController < ApplicationController
    end
 
    def destroy
+        id = params[:id]
+        log = Log.find(id)
+        log.destroy
+
+        user = current_user
+        redirect_to "/users/#{user.id}"
    end
 
    def show
@@ -49,6 +55,8 @@ class LogsController < ApplicationController
       @authors = User.all
       author_id = @log.user_id
       @author = @authors.find(author_id)
+
+
 
    end
 

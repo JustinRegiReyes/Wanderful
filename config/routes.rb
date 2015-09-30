@@ -63,4 +63,6 @@ Rails.application.routes.draw do
 
    patch "/logs/:id/edit", to: "logs#update"
 
+   delete "/logs/:id/edit", to: "logs#destroy"
+
 end
