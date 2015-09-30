@@ -11,7 +11,7 @@
 <div class="container">
 	<div class="page-header">
 		<header>
-			<h1> <%= @city.name %> </h1>
+			<h1 id="<%= @city.name %>"> <%= @city.name %> </h1>
 		</header>
 	</div>
 
@@ -28,7 +28,7 @@
 					<a href="/posts/<%= log.id %>"><h4> <%= log.title %> </h4></a>
 
 					<h5> By: <%= @user.first_name %> <%= @user.last_name[0] %>. </h5>
-					<div id="logAddress"><div id="<%= log.address %>"></div>
+					<span id="<%= log.address %>"></span>
 
 					<p> <%= log.content %>	</p>
 				</div>
