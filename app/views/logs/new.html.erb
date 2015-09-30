@@ -28,6 +28,7 @@
             <div id="log-form" class="panel-body">
             <%= f.text_field :address, class: "form-input-long", placeholder: 'Address. Ex. "124 Montgomery St, San Francisco, CA"'%><br><br>
             <%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %>
+            <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
             </div>
 
             <%= f.submit "Post" %>
