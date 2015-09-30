@@ -60,4 +60,8 @@ Rails.application.routes.draw do
    post '/logs', to: 'logs#create'
    post '/cities/:id/logs/new', to: "logs#create"
 
+   get '/logs/:id/edit', to: 'logs#edit', as: "log"
+
+   patch "/logs/:id/edit", to: "logs#update"
+
 end
