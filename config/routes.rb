@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
    get '/cities', to: 'cities#index'
 
-    get 'cities/:id', to: 'cities#show'
+   get 'cities/:id', to: 'cities#show'
 
    get 'cities/new', to: 'cities#new'
 
