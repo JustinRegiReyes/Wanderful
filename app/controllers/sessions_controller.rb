@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-   def new
+   def new #login page
       @user = User.new
       render :new
    end
@@ -16,8 +16,7 @@ class SessionsController < ApplicationController
       end
    end
 
-   def destroy
-      # binding.pry
+   def destroy #logout
       logout
       redirect_to root_path
    end

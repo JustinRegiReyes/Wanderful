@@ -1,12 +1,6 @@
 class LogsController < ApplicationController
-   # attr_accessor :city_id
+   before_action :logged_in?, only: [:new]
    def new
-
-      # city_url = request.original_url
-      # city_arr = city_url.split("/")
-      # city_id = city_arr[4]
-      # puts "\n\n\n\n\n\n\n #{city_id}"
-      # binding.pry
       @user = current_user
       @log = Log.new
       @city = City.find_by_id(params[:id])

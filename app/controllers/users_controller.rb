@@ -25,8 +25,15 @@ class UsersController < ApplicationController
   def create
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city, :username)
     @user = User.create(user_params)
-    login(@user)
-    redirect_to "/users/#{@user.id}"
+    #find user if create was successful
+    createdUser = User.find_by(first_name: params[:user][:first_name])
+    if createdUser
+      binding.pry 
+      login(@user)
+      redirect_to "/users/#{@user.id}"
+    else
+      redirect_to "/users/new"
+    end
   end
 
   def update
