@@ -15,7 +15,7 @@
 				<% @city.logs.each do |log| %>
 				<% @user = User.find_by_id(log.user_id) %>
 				<div>
-					<a href="/posts/<%= log.id %>"><h4> <%= log.title %> </h4></a>
+					<a href="/logs/<%= log.id %>"><h4> <%= log.title %> </h4></a>
 
 					<h5> By: <%= @user.first_name %> <%= @user.last_name[0] %>. </h5>
 

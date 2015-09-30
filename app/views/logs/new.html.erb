@@ -7,14 +7,30 @@
 
    <div class="page-wrapper">
       <div class="panel panel-info">
-         <%= form_for @log, url: "/cities/#{@city.id}/logs/new", method: "post" do |f| %>
+
+         <%= form_for @log, url: city_log_new_path, method: "post" do |f| %>
+         
+             <% if @log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@log.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    </div>
+      <% end %>
+      <% end %>
+
+
             <div class="panel-heading">
             <%= f.text_field :title, placeholder: "Title" %>
             </div>
             <div class="panel-body">
             <%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %>
             </div>
+
             <%= f.submit "Post" %>
+
          <% end %>
       </div>
    </div>

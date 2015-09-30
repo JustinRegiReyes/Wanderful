@@ -27,3 +27,7 @@ end
   City.find_by_id(rand(1 .. 50)).logs << log
   User.find_by_id(rand(1 .. 50)).logs << log
 end
+
+City.create( name: "San Francisco")
+City.create( name: "New York")
+City.create( name: "London")

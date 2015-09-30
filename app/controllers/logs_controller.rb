@@ -12,16 +12,20 @@ class LogsController < ApplicationController
    end
 
    def create
-      # binding.pry
-
       logInfo = params.require(:log).permit(:title, :content)
-      city = City.find_by_id(params[:id])
-      # city = City.find_by_name(cityName)
-      user = current_user
-      log = Log.create(logInfo)
-      city.logs << log
-      user.logs << log
-      redirect_to "/cities/#{city.id}"
+      @city = City.find_by_id(params[:id])
+      
+      @user = current_user
+
+      @log = Log.new(logInfo)
+      if @log.save
+        @city.logs << @log
+        @user.logs << @log
+        redirect_to "/cities/#{@city.id}"
+      else
+        render :new
+      end
+
    end
 
    def edit
@@ -59,9 +63,9 @@ class LogsController < ApplicationController
       @authors = User.all
       author_id = @log.user_id
       @author = @authors.find(author_id)
-
-
-
    end
 
 end
+
+
+
