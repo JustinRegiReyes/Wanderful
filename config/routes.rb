@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
    get 'users/destroy'
 
-   get 'cities/index', to: 'cities#index'
+   get '/cities', to: 'cities#index'
 
     get 'cities/:id', to: 'cities#show'
 
@@ -58,5 +58,6 @@ Rails.application.routes.draw do
    get "/logs/:id", to: "logs#show"
 
    post '/logs', to: 'logs#create'
+   post '/cities/:id/logs/new', to: "logs#create"
 
 end

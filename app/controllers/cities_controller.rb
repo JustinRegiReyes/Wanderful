@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
   def index
      @cities = City.all
+     @current_user = current_user
   end
 
   def new

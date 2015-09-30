@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def new
+    @user = User.new
+  end
+
   def show
     @user = User.find(params[:id])
     @current_user = current_user
@@ -17,7 +21,7 @@ class UsersController < ApplicationController
   def create
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city, :username)
     @user = User.create(user_params)
-
+    login(@user)
     redirect_to "/users/#{@user.id}"
   end
 
@@ -33,8 +37,5 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  def new
-    @user = User.new
-    # @current_user = current_user
-  end
+  
 end
