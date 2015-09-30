@@ -8,10 +8,11 @@ class LogsController < ApplicationController
 
    def index
       @user = current_user
-      @logs = Log.all
+      @logs = Log.all.order("id DESC")
    end
 
    def create
+
       logInfo = params.require(:log).permit(:title, :content)
       @city = City.find_by_id(params[:id])
       
@@ -25,12 +26,12 @@ class LogsController < ApplicationController
       else
         render :new
       end
-
    end
 
    def edit
       id = params[:id]
-    @log = Log.find_by_id(id)
+      @log = Log.find_by_id(id)
+      # @log = Log.all
     @city = City.find_by_id(@log.city_id)
 
    end
