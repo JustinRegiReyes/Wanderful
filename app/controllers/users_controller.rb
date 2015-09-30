@@ -26,9 +26,8 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city, :username)
     @user = User.create(user_params)
     #find user if create was successful
-    createdUser = User.find_by(first_name: params[:user][:first_name])
+    createdUser = User.find_by_id(@user.id)
     if createdUser
-      binding.pry 
       login(@user)
       redirect_to "/users/#{@user.id}"
     else
