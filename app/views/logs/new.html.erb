@@ -11,7 +11,8 @@
             <div class="panel-heading">
             <%= f.text_field :title, placeholder: "Title" %>
             </div>
-            <div class="panel-body">
+            <div id="log-form" class="panel-body">
+            <%= f.text_field :address, class: "form-input-long", placeholder: 'Address. Ex. "124 Montgomery St, San Francisco, CA"'%><br><br>
             <%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %>
             </div>
             <%= f.submit "Post" %>

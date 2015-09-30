@@ -1,3 +1,13 @@
+ <% content_for :head do%>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoDzkQGQeZAOkijfEvvm3Y5brNqIIKWH8">
+    </script>
+ <% end %>
+
+<h1>Google Maps Tut</h1>
+<div id="map-container">
+  <div id="map-canvas"></div>
+</div>
+
 <div class="container">
 	<div class="page-header">
 		<header>
@@ -19,6 +29,7 @@
 					<a href="/logs/<%= log.id %>"><h4> <%= log.title %> </h4></a>
 
 					<h5> By: <%= @user.first_name %> <%= @user.last_name[0] %>. </h5>
+					<div id="logAddress"><div id="<%= log.address %>"></div>
 
 					<p> <%= log.content.truncate_words(10) %> <a href="/logs/<%= log.id %>"><small>(View More)</small></a>	</p>
 				</div>
