@@ -41,7 +41,7 @@ class LogsController < ApplicationController
 
     updated_attributes = params.require(:log).permit(:title, :content)
     log.update_attributes(updated_attributes)
-    redirect_to "/logs/#{log_id}"
+    redirect_to "/users/#{log.user_id}"
 
    end
 
