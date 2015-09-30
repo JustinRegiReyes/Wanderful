@@ -8,7 +8,7 @@ class LogsController < ApplicationController
 
    def index
       @user = current_user
-      @logs = Log.all
+      @logs = Log.all.order("id DESC")
    end
 
    def create
@@ -26,7 +26,8 @@ class LogsController < ApplicationController
 
    def edit
       id = params[:id]
-    @log = Log.find_by_id(id)
+      @log = Log.find_by_id(id)
+      # @log = Log.all
     @city = City.find_by_id(@log.city_id)
 
    end

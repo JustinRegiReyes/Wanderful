@@ -14,7 +14,7 @@
 			<div class="panel-body">
 				<% @logs = @city.logs.all.order("id DESC") %>
 				<% @logs.each do |log| %>
-				<% @user = User.find_by_id(log.user_id) %>
+				<% @user = log.user %>
 				<div>
 					<a href="/logs/<%= log.id %>"><h4> <%= log.title %> </h4></a>
 
