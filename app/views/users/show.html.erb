@@ -34,6 +34,7 @@
                      <p> <%= log.content %> </p>
                      <% if current_user.id == @user.id %>
                         <%= button_to "Delete", log, method: :delete, data: { confirm: 'Are you sure you want to delete this?'} %>
+                        <%= link_to "Edit", log_path(log.id) %> 
                      <% else %>
                      <% end %>
                   </div>
