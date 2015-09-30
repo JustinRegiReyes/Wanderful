@@ -10,17 +10,13 @@ Rails.application.routes.draw do
 
    get "/users/:id", to: "users#show", as: "profile"
 
-   get 'users/index'
-
-   get 'users/show'
-
-   get 'users/edit'
-
-   get 'users/create'
-
-   get 'users/update'
-
-   get 'users/destroy'
+   # get 'users/edit'
+   #
+   # get 'users/create'
+   #
+   # get 'users/update'
+   #
+   # get 'users/destroy'
 
    get '/cities', to: 'cities#index'
 
@@ -30,11 +26,11 @@ Rails.application.routes.draw do
 
    get 'cities/create', to: 'cities#create'
 
-   get 'cities/edit'
-
-   get 'cities/update'
-
-   get 'cities/destroy'
+   # get 'cities/edit'
+   #
+   # get 'cities/update'
+   #
+   # get 'cities/destroy'
 
    get 'cities/:id', to: 'cities#show'
 
@@ -52,16 +48,19 @@ Rails.application.routes.draw do
    patch "/users/:id/edit", to: "users#update"
 
    #posts routes
+
+   get "/cities/:id/logs/new", to: "logs#new", as: "city_log_new"
+
    get "/logs", to: "logs#index"
-   get "/logs/new", to: "logs#new"
 
    get "/logs/:id", to: "logs#show"
 
-   post '/logs', to: 'logs#create'
-   post '/cities/:id/logs/new', to: "logs#create"
+   post '/cities/:id/logs/new', to: 'logs#create'
 
    get '/logs/:id/edit', to: 'logs#edit', as: "log"
 
    patch "/logs/:id/edit", to: "logs#update"
+
+   delete "/logs/:id/edit", to: "logs#destroy"
 
 end

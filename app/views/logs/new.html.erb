@@ -1,15 +1,21 @@
+<div class="container">
+   <header>
+      <div class="page-header">
+         <h1>New Travel Log</h1>
+      </div>
+   </header>
 
-<%= form_for @log do |f| %>
-
-
-<%= f.text_field :city, placeholder: "City" %>
-
-<%= f.text_field :title, placeholder: "Title" %><br><br>
-
-<%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %><br>
-
-<%= f.submit "Post" %>
-
-<% end %>
-
-
+   <div class="page-wrapper">
+      <div class="panel panel-info">
+         <%= form_for @log, url: "/cities/#{@city.id}/logs/new", method: "post" do |f| %>
+            <div class="panel-heading">
+            <%= f.text_field :title, placeholder: "Title" %>
+            </div>
+            <div class="panel-body">
+            <%= f.text_area :content, :cols => "50", :rows => "10", placeholder: "Article..." %>
+            </div>
+            <%= f.submit "Post" %>
+         <% end %>
+      </div>
+   </div>
+</div>
