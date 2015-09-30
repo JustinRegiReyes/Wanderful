@@ -1,0 +1,15 @@
+<div class="page-container">
+	<h1 class="text-center panel-body"><%= @log.title %></h1>
+
+	<div>
+		<a href="/users/<%= @author.id %>"><h5> By: <%= @author.first_name %> <%= @author.last_name[0] %> </h5> </a>
+	</div>
+
+	<div >
+
+		<p><%= @log.content %></p>
+	
+	</div>	
+
+</div>
+

@@ -1,0 +1,29 @@
+<div class="container">
+   <div class="page-header">
+      <header>
+         <h1>Cities</h1>
+      </header>
+   </div>
+
+   <div class="page-container">
+      <div class="panel">
+         <div class="panel-heading">
+            <h2>City List <small>Random</small></h2>
+         </div>
+         <div class="panel-body">
+
+            <ul>
+            <% @cities.each do |city| %>
+            <li>
+               <div>
+                  <p> <%= city.name %> </p>
+                  <a href="/cities/<%= city.id %>"><button class="btn btn-xs btn-success">City</button></a>
+               </div>
+            </li>
+            <% end %>
+            </ul>
+         </div>
+      </div>
+
+   </div>
+</div>
