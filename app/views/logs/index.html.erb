@@ -10,8 +10,7 @@
 
 				<div>
 					<a href="/logs/<%= log.id %>"><h4> <%= log.title %> </h4></a>
-					<!-- This does not work. I'm still working through is. ** Nathan -->
-					<p><small>Log for: <% city = City.find_by_id(log.city_id).name %> <%= city %> </small></p>
+					<p><small>Log for: <%= City.find_by_id(log.city_id).name %> </small></p>
 					<% @time =  ((Time.zone.now - log.created_at) / 3600).ceil %>
 					<p><small> Created: <%= @time %> hours ago. </small></p>
 
