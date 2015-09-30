@@ -9,7 +9,7 @@
       </div>
    </header>
 
-   <h1>Welcome <%= @user.email %></h1>
+   <h1>Welcome <%= @user.first_name %> <%= @user.last_name[0] %>. </h1>
    <p><small> Account created <%= time_ago_in_words(@user.created_at) %> ago. </small></p>
 
    <div>
