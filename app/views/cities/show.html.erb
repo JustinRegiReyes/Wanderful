@@ -24,6 +24,7 @@
 					<a href="/posts/<%= log.id %>"><h4> <%= log.title %> </h4></a>
 
 					<h5> By: <%= @user.first_name %> <%= @user.last_name[0] %>. </h5>
+					<div id="logAddress"><div id="<%= log.address %>"></div>
 
 					<p> <%= log.content %>	</p>
 				</div>
