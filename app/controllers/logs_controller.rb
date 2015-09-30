@@ -1,5 +1,5 @@
 class LogsController < ApplicationController
-   # attr_accessor :city_id
+   before_action :logged_in?, only: [:new]
    def new
       @user = current_user
       @log = Log.new
