@@ -1,5 +1,5 @@
 
-<div class="page-container">
+<div class="container">
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h2>Travel Logs Archives</h2>
@@ -10,6 +10,11 @@
 
 				<div>
 					<a href="/logs/<%= log.id %>"><h4> <%= log.title %> </h4></a>
+					<!-- This does not work. I'm still working through is. ** Nathan -->
+					<p><small>Log for: <% city = City.find_by_id(log.city_id).name %> <%= city %> </small></p>
+					<% @time =  ((Time.zone.now - log.created_at) / 3600).ceil %>
+					<p><small> Created: <%= @time %> hours ago. </small></p>
+
 				</div>
 
 				<% end %>
@@ -17,3 +22,6 @@
 		</div>
 
 </div>
+<!-- .strftime -->
+<!-- hours_since_creation = (Time.zone.now - @record.created_at) / 3600 -->
+<!--  city = City.find_by_id(log.city_id)  -->
