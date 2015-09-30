@@ -26,3 +26,7 @@ end
   City.offset(random_city).first.logs << log
   User.offset(random_user).first.logs << log
 end
+
+City.create( name: "San Francisco")
+City.create( name: "New York")
+City.create( name: "London")
