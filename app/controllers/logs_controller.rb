@@ -14,9 +14,8 @@ class LogsController < ApplicationController
    def create
       # binding.pry
 
-      logInfo = params.require(:log).permit(:title, :content)
+      logInfo = params.require(:log).permit(:title, :content, :address)
       city = City.find_by_id(params[:id])
-      # city = City.find_by_name(cityName)
       user = current_user
       log = Log.create(logInfo)
       city.logs << log

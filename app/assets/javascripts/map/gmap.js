@@ -1,15 +1,15 @@
 $(document).ready(function() {
-  	initMap();
-  	marker = new google.maps.Marker({
+  	if ($("div#map-canvas")) {
+  		initMap();
+  		marker = new google.maps.Marker({
                     position: new google.maps.LatLng(coordinates.lat, coordinates.lng),
                     map: map,
                     title: 'WORK'
                 });
-  	logAddress();
-  	geolocations();
-
-  }
-)
+  		logAddress();
+  		geolocations();
+  	}
+})
 
 var coordinates = {lat: 37.78, lng: -122.44}
 var map;
