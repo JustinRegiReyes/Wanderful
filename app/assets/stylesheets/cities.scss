@@ -1,0 +1,57 @@
+// Place all the styles related to the cities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#map-container {
+   height: 400px;
+   margin-top: 25px;
+   position: relative;
+   margin-right: auto;
+   margin-left: auto;
+   width: 80%;
+ }
+
+ #map-canvas {
+   height: 384px;
+ }
+
+ #navbar {
+ 	background-color: rgba(255, 255, 255, 0.91);
+ 	font-family: helvetica;
+ 	height: 30px;
+ 	border-bottom: 1px solid #FFE6BA;
+ 	margin-bottom: 0px;
+ }
+
+ #brand {
+ 	padding-right: 20px;
+ 	padding-left: 25px;
+ }
+
+ #panel-heading {
+ 	background-color: rgba(255, 255, 255, 0.91);
+ }
+
+ #city-banner {
+ 	height: 400px;
+    background: url(http://www.mrwallpaper.com/wallpapers/Streets-of-San-Francisco-2560x1440.jpg);
+    background-size: cover;
+ }
+
+ .heading-wrapper {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    position: relative;
+    bottom: 64px;
+ }
+
+ .city-name {
+  text-align: center;
+  font-size: 40px;
+ }
+
+ .panel-info {
+  border: 0px;
+ }

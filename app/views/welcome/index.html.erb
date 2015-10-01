@@ -1,15 +1,28 @@
-<header>
-   <h1>Welcome to Wanderful</h1>
-</header>
+<div class="container" id="welcome-page">
 
-<div>
-   <h2>Join Us! <small>It's free</small></h2>
-   <p>Wanderful is a social travel site where you can essentially keep a blog of places you,ve visited and help make other people's expiriences at that destination better.</p>
-</div>
+   <header>
+      <div class="page-header">
+         <h1>Welcome to Wanderful</h1>
+         <h3>Your Connection to Travel</h3>
+      </div>
+   </header>
 
-<div class="button-wrapper">
-      <!-- Eventially will link to user login page -->
-   <a href="/sessions/new"><button class="button" id="login-redirect">Login</button></a>
+   <div>
+      <h2>Join Us! <small>It's free</small></h2>
+      <p><strong>Wanderful</strong> is a social travel site where you can essentially keep a blog of places you,ve visited and help make other people's expiriences at that destination better.</p>
+   </div>
 
-   <a href="/users/new"><button class="button" id="signup-redirect">Sign Up</button></a>
+   <div class="button-wrapper">
+      <a href="/sessions/new"><button class="btn btn-danger" id="login-redirect">Login</button></a>
+      <a href="/users/new"><button class="btn btn-warning" id="signup-redirect">Sign Up</button></a>
+      <a href="/cities"><button class="btn btn-info" id="cities-index">City List</button></a>
+   </div>
+
+   <footer>
+      <div class="row">
+         <div class="col-md-2 col-md-offset-5" id="footer">
+            <h5>Wanderful</h5>
+         </div>
+      </div>
+   </footer>
 </div>

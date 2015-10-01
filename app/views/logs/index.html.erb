@@ -1,0 +1,26 @@
+
+<div class="container">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h2>Travel Logs Archives</h2>
+			</div>
+
+			<div class="panel-body">
+				<% @logs.each do |log| %>
+
+				<div>
+					<a href="/logs/<%= log.id %>"><h4> <%= log.title %> </h4></a>
+					<p><small>Log for: <%= City.find_by_id(log.city_id).name %> </small></p>
+					<p><small> Created <%= time_ago_in_words(log.created_at) %> ago. </small></p>
+
+				</div>
+
+				<% end %>
+			</div>
+		</div>
+
+</div>
+<!-- .strftime -->
+<!-- hours_since_creation = (Time.zone.now - @record.created_at) / 3600 -->
+<!--  city = City.find_by_id(log.city_id)  -->
+<!-- = time_ago_in_words(timestamp)  -->

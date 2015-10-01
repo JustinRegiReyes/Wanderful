@@ -1,10 +1,42 @@
-Edit
 
-<%= form_for @user, method:"patch" do |f| %>
-	<%=	f.text_field :first_name %>
-	<%= f.text_field :last_name %>
- 	<%= f.text_field :username %>
-	 
-<%= f.submit "Update user profile" %>
 
-<% end %>
+<div class="container user-page">
+	<header>
+		<div class="page-header">
+				<h1><%= @user.first_name %>'s Profile <small>Edit</small></h1>
+		</div>
+	</header>
+
+	<div class="body-content">
+
+		<div class="form-wrapper col-md-6 col-md-offset-3">
+			<br>
+			<div class="form-group">
+				<%= form_for @user, method: "patch" do |f| %>
+
+					<%=	f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+					<br>
+					<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+					<br>
+				 	<%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+					<br>
+				 	<%= f.text_field :current_city, placeholder: "Current Location", class: "form-control" %>
+					<br>
+					<%= f.password_field :password, placeholder: "Confirm Password to Update Profile", class: "form-control" %>
+					<br>
+					<%= f.submit "Update Profile", class: "btn btn-sm" %>
+
+				<% end %>
+			</div>
+		</div>
+
+	</div>
+
+	<footer>
+      <div class="row">
+         <div class="col-md-2 col-md-offset-5" id="footer">
+            <h5>Wanderful</h5>
+         </div>
+      </div>
+   </footer>
+</div>

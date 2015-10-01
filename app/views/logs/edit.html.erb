@@ -1,0 +1,13 @@
+<header>
+	<h1>Edit Log</h1>
+</header>
+<%= form_for @log, method:"patch" do |f| %>
+
+<%= f.text_field :title %><br><br>
+<%= f.text_field :address %><br><br>
+<%= f.text_area :content, :cols => "50", :rows => "10" %> <br> <br>
+<%= f.text_area :all_tags  %> <br>
+
+<%= f.submit "Update Log" %>
+
+<% end %>
