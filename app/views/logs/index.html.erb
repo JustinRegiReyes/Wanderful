@@ -11,8 +11,7 @@
 				<div>
 					<a href="/logs/<%= log.id %>"><h4> <%= log.title %> </h4></a>
 					<p><small>Log for: <%= City.find_by_id(log.city_id).name %> </small></p>
-					<% @time =  ((Time.zone.now - log.created_at) / 3600).ceil %>
-					<p><small> Created: <%= @time %> hours ago. </small></p>
+					<p><small> Created <%= time_ago_in_words(log.created_at) %> ago. </small></p>
 
 				</div>
 
@@ -24,3 +23,4 @@
 <!-- .strftime -->
 <!-- hours_since_creation = (Time.zone.now - @record.created_at) / 3600 -->
 <!--  city = City.find_by_id(log.city_id)  -->
+<!-- = time_ago_in_words(timestamp)  -->

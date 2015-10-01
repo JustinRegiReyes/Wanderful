@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930190505) do
+ActiveRecord::Schema.define(version: 20150930222934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20150930190505) do
     t.integer  "log_id"
   end
 
+  create_table "log_taggings", force: :cascade do |t|
+    t.integer  "log_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "log_taggings", ["log_id"], name: "index_log_taggings_on_log_id", using: :btree
+  add_index "log_taggings", ["tag_id"], name: "index_log_taggings_on_tag_id", using: :btree
+
   create_table "logs", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -31,6 +41,12 @@ ActiveRecord::Schema.define(version: 20150930190505) do
     t.integer  "user_id"
     t.integer  "city_id"
     t.string   "address"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +60,6 @@ ActiveRecord::Schema.define(version: 20150930190505) do
     t.string   "current_city"
   end
 
+  add_foreign_key "log_taggings", "logs"
+  add_foreign_key "log_taggings", "tags"
 end

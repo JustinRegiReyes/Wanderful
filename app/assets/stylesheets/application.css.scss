@@ -11,12 +11,12 @@
  * file per style scope.
  *
 
- *= require_self
+ *= require bootstrap
+ *= require users
  *= require_tree .
-
- */
+*/
  body {
 	padding-top: 50px;
  }	
  @import "bootstrap";
-
+ @import "users";

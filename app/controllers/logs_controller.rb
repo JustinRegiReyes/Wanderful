@@ -8,13 +8,18 @@ class LogsController < ApplicationController
 
    def index
       @user = current_user
-      @logs = Log.all.order("id DESC")
+      if params[:tag] && Log.tagged_with(params[:tag])
+        @logs = Log.tagged_with(params[:tag])
+      else
+        @logs = Log.all.order("id DESC")
+      end
    end
 
    def create
-      logInfo = params.require(:log).permit(:title, :content, :address)
+
+      logInfo = params.require(:log).permit(:title, :content, :all_tags, :address)
       @city = City.find_by_id(params[:id])
-      
+
       @user = current_user
 
       @log = Log.new(logInfo)
@@ -39,7 +44,7 @@ class LogsController < ApplicationController
     log_id = params[:id]
     log = Log.find_by_id(log_id)
 
-    updated_attributes = params.require(:log).permit(:title, :content)
+    updated_attributes = params.require(:log).permit(:title, :content, :all_tags)
     log.update_attributes(updated_attributes)
     redirect_to "/users/#{log.user_id}"
 
@@ -66,6 +71,3 @@ class LogsController < ApplicationController
    end
 
 end
-
-
-
