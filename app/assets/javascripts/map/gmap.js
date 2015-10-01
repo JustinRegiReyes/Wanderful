@@ -37,7 +37,7 @@ function initMap() {
                   arrowStyle: 2
                 });
 
-		city = $('div.panel-heading h2').attr("id");
+		city = $('div#panel-heading h2').attr("id");
 		$.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + 
 		city + "&key=AIzaSyAeBs3vx7LfuQg8Mj8tEqZ5WvgcwT4DElQ"
 		).done(function(data) {
