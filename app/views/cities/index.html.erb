@@ -7,19 +7,13 @@
 
    <div class="page-container">
       <div class="panel">
-         <div class="panel-heading">
-            <h2>City List <small>Random</small></h2>
-         </div>
          <div class="panel-body">
 
-            <ul>
             <% @cities.each do |city| %>
-            <li>
                <div>
-                  <p> <%= city.name %> </p>
-                  <a href="/cities/<%= city.id %>", data-no-turbolink= "true"><button class="btn btn-xs btn-success">City</button></a>
+                  <h3><%= city.name %> </h3><a href="/cities/<%= city.id %>", data-no-turbolink= "true"><button class="btn btn-xs btn-success">See Travel Logs</button></a>
+                  
                </div>
-            </li>
             <% end %>
             </ul>
          </div>
