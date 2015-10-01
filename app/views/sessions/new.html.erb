@@ -1,16 +1,20 @@
-<h1>Login Page</h1>
+<div class="container user-page">
+   <header>
+      <div class="page-header">
+         <h1>Login Page</h1>
+      </div>
+   </header>
 
-<div>
+<div class=form-control>
    <%= form_for @user, url: "/sessions", method: "post" do |f| %>
-   <div>
+
       <%= f.email_field :email, placeholder: "Email" %>
-   </div>
-   <div>
+
       <%= f.password_field :password, placeholder: "Password" %>
-   </div>
+
    <br>
    <div>
-      <%= f.submit "Login" %>
+      <%= f.submit class: "btn btn-sm" "Login" %>
    </div>
    <% end %>
 </div>
