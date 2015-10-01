@@ -19,7 +19,7 @@ class LogsController < ApplicationController
 
       logInfo = params.require(:log).permit(:title, :content, :all_tags)
       @city = City.find_by_id(params[:id])
-      
+
       @user = current_user
 
       @log = Log.new(logInfo)
@@ -71,6 +71,3 @@ class LogsController < ApplicationController
    end
 
 end
-
-
-

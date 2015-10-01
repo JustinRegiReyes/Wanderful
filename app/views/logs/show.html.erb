@@ -16,12 +16,16 @@
 	</div>
 
 	<div class="tags" id="log-tags">
-
-		<p><%=raw tag_links(@log.all_tags) %></p>
+		<ul class="">
+			<% tag_arr =  tag_array(@log.all_tags) %>
+			<% tag_arr.each do |tag| %>
+			<li> <%= tag %> </li>
+			<% end %>
+		</ul>
 
 	</div>
 
-
+<!-- <span class="label label-info"></span> -->
 
 	<% if @current_user == @author %>
 	<div id="button-container">
