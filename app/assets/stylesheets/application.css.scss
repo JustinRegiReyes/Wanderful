@@ -15,8 +15,10 @@
  *= require users
  *= require_tree .
 */
+
  body {
 	padding-top: 50px;
- }	
+	padding-bottom: 30px;
+	}	
  @import "bootstrap";
  @import "users";
