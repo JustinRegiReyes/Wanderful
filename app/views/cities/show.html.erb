@@ -1,15 +1,26 @@
- <% content_for :head do%>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoDzkQGQeZAOkijfEvvm3Y5brNqIIKWH8">
-    </script>
 
-<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble.js">
-    </script>
- <% end %>
+   <% content_for :head do%>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoDzkQGQeZAOkijfEvvm3Y5brNqIIKWH8">
+      </script>
+      <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble.js">
+      </script>
+   <% end %>
+<div class="container">
 
-<div id="city-banner"></div>
+   <h1>Google Maps Tut</h1>
+   <div id="map-container">
+     <div id="map-canvas"></div>
+   </div>
+
+
+	<div class="page-header">
+
+
+
+   <div id="city-banner"></div>
 	<div class="heading-wrapper">
 		<div id="panel-heading">
-					<h2 id="<%= @city.name %>" class="city-name"> <%= @city.name %> <span>Travel Logs</span></h2>
+			<h2 id="<%= @city.name %>" class="city-name"> <%= @city.name %> <span>Travel Logs</span></h2>
 		</div>
 	</div>
 
@@ -32,5 +43,3 @@
 				<% end %>
 			</div>
 		<%= link_to("Post Travel Log", city_log_new_path(@city)) %>
-	
-

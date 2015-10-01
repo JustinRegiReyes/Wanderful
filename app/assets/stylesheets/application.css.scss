@@ -14,11 +14,20 @@
  *= require bootstrap
  *= require users
  *= require_tree .
-*/
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *= require_self
+
+ *= require foundation_and_overrides
+
+ */
+
+
 
  body {
 	padding-top: 50px;
 	padding-bottom: 30px;
-	}	
+	}
+
  @import "bootstrap";
  @import "users";
