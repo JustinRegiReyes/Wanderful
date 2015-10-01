@@ -6,7 +6,7 @@ class Log < ActiveRecord::Base
 	belongs_to :city
 
 	has_many :log_taggings
-	has_many :tags, through: :log_taggings
+	has_many :tags, through: :log_taggings, dependent: :destroy #delete tags if log is destroyed
 
 	def all_tags=(names)
 	  	self.tags = names.split(", ").map do |name|
