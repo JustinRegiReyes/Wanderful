@@ -8,7 +8,11 @@ class LogsController < ApplicationController
 
    def index
       @user = current_user
-      @logs = Log.all.order("id DESC")
+      if params[:tag] && Log.tagged_with(params[:tag])
+        @logs = Log.tagged_with(params[:tag])
+      else
+        @logs = Log.all.order("id DESC")
+      end
    end
 
    def create

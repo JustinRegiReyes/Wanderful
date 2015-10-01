@@ -31,6 +31,8 @@ gem 'ffaker'
 
 gem "dynamic_form"
 
+gem "foundation-rails"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

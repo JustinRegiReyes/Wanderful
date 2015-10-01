@@ -15,9 +15,9 @@
 
 	</div>
 
-	<div id="log-tags">
+	<div class="tags" id="log-tags">
 
-		<p><%= @log.all_tags %></p>
+		<p><%=raw tag_links(@log.all_tags) %></p>
 
 	</div>
 
