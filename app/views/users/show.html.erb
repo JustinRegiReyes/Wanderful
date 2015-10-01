@@ -32,8 +32,12 @@
                   <div>
                      <a href="/logs/<%= log.id %>"><h3> <%= log.title %> </h3></a>
                      <p> <%= log.content %> </p>
-                     <p><%= log.all_tags %></p>
+                     <div class="tags" id="log-tags">
 
+                     <p><%=raw tag_links(log.all_tags) %></p>
+
+                     </div>
+                     
                      <% if current_user.id == @user.id %>
                         <%= button_to "Delete", log, method: :delete, data: { confirm: 'Are you sure you want to delete this?'} %>
                         <%= link_to "Edit", log_path(log.id) %> 
