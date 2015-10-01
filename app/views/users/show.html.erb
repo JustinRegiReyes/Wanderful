@@ -48,6 +48,7 @@
          <div>
             <ul class="list-group">
                <% @user.logs.each do |log| %>
+<<<<<<< HEAD
                <li class="list-group-item" id="logs-body">
                   <div class="panel panel-default">
                      <div class="panel-heading">
@@ -56,6 +57,9 @@
                      <div class="panel-body">
                         <p><small> City: <a href="/cities/<%= log.city_id %>"> <%= City.find_by_id(log.city_id).name %> </a></small></p>
                         <p> <%= log.content %> </p>
+                     </div>
+                     <div class="tags" id="log-tags">
+                        <p><%=raw tag_links(log.all_tags) %></p>
                      </div>
                      <div class="panel-footer">
 
@@ -71,6 +75,7 @@
                         <% else %>
                         <% end %>
                      </div>
+
                   </div>
                </li>
                <% end %>

@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       #posts routes
    get "/cities/:id/logs/new", to: "logs#new", as: "city_log_new"
 
-   get "/logs", to: "logs#index"
+   get "/logs", to: "logs#index", as: "logs"
 
    get "/logs/:id", to: "logs#show"
 
@@ -47,5 +47,8 @@ Rails.application.routes.draw do
    patch "/logs/:id/edit", to: "logs#update"
 
    delete "/logs/:id/edit", to: "logs#destroy"
+
+   #tags routes
+   get 'tags/:tag', to: 'logs#index', as: "tag"   
 
 end
