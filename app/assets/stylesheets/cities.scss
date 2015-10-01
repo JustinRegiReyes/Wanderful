@@ -2,16 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	background: url("http://40.media.tumblr.com/adb022b179bab300e5e981b97995cb91/tumblr_n7wfzzjE2v1sjl3qko1_1280.jpg") no-repeat;
+	background-size: cover;
+	background-position-y: 10%;	
+}
+
 #map-container {
    height: 400px;
-   border-radius: 16px 16px;
    border-color: #fff;
    border-style: solid;
-   box-shadow: 2px 2px 10px #B1B1B1;
    margin-top: 25px;
    border-width: 7px;
+   position: relative;
+   margin-right: auto;
+   margin-left: auto;
+   width: 80%;
  }
+
  #map-canvas {
    height: 384px;
-   width: 100%;
+ }
+
+ #navbar {
+ 	background-color: rgba(255, 255, 255, 0.91);
+ 	font-family: helvetica;
+ 	height: 30px;
+ 	border-bottom: 1px solid #FFE6BA;
+ }
+
+ #brand {
+ 	padding-right: 20px;
+ 	padding-left: 25px;
+ }
+
+ #panel-heading {
+ 	background-color: rgba(255, 255, 255, 0.91);
  }

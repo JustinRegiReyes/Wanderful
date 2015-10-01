@@ -37,7 +37,7 @@ function initMap() {
                   arrowStyle: 2
                 });
 
-		city = $("header h1").attr("id");
+		city = $('div.panel-heading h2').attr("id");
 		$.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + 
 		city + "&key=AIzaSyAeBs3vx7LfuQg8Mj8tEqZ5WvgcwT4DElQ"
 		).done(function(data) {
@@ -61,8 +61,6 @@ function initMap() {
               logTitleArr.push(logTitle);
               logContentArr.push($('#' + logTitle).html());
 
-              // console.log(coordinates);
-              // console.log(logTitle);
               
               var marker = new google.maps.Marker({
                               position: new google.maps.LatLng(coordinates.lat, coordinates.lng),
@@ -70,9 +68,7 @@ function initMap() {
                               title: logTitleArr[markersCounter],
                               content: logContentArr[markersCounter]
                           });
-            // console.log(logTitleArr);
-            // console.log(logContentArr[markersCounter]);
-            // console.log(markersCounter);
+
               google.maps.event.addListener(marker, 'mouseover', function() {
                 console.log(this.content);
                 infoBubble.setContent((this.content).toString());

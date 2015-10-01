@@ -6,23 +6,17 @@
     </script>
  <% end %>
 
-<h1>Google Maps Tut</h1>
+
 <div id="map-container">
-  <div id="map-canvas"></div>
-</div>
-
-<div class="container">
-	<div class="page-header">
-		<header>
-			<h1 id="<%= @city.name %>"> <%= @city.name %> </h1>
-		</header>
-	</div>
-
+				<div id="map-canvas"></div>
+			</div>
+			
 <div class="page-container">
 		<div class="panel panel-info">
-			<div class="panel-heading">
-				<h2>Travel Logs</h2>
+			<div id="panel-heading" class="panel-heading">
+				<h2 id="<%= @city.name %>"> <%= @city.name %> <span>Travel Logs</span></h2>
 			</div>
+			
 
 			<div class="panel-body">
 				<% @logs = @city.logs.all.order("id DESC") %>
@@ -41,4 +35,4 @@
 		</div>
 		<%= link_to("Post Travel Log", city_log_new_path(@city)) %>
 	</div>
-</div>
+
