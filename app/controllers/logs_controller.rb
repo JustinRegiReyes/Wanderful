@@ -12,8 +12,7 @@ class LogsController < ApplicationController
    end
 
    def create
-
-      logInfo = params.require(:log).permit(:title, :content)
+      logInfo = params.require(:log).permit(:title, :content, :address)
       @city = City.find_by_id(params[:id])
       
       @user = current_user
