@@ -5,6 +5,7 @@
       </div>
    </header>
    <div class="col-md-4 col-md-offset-4" id="login-wrapper">
+      <br/>
 
       <%= form_for @user, url: "/sessions", method: "post" do |f| %>
          <div class="form-group" role="group">
@@ -19,7 +20,7 @@
             <%= f.submit "Login", type: "button", class: "btn btn-xs" %>
          </div>
       <% end %>
-
+      <a href='/users/new'>Not a member?</a>
    </div>
 
 </div>
