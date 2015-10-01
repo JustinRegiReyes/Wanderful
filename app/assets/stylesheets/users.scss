@@ -1,10 +1,76 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+Robin-blue: #1A7B8E
+Puke-dirt-green: #828B2C
+grey: #DBDBD9
+Light brown: #75634D
+grey-pink: #A78381
+*/
 body {
+	background-color: #DBDBD9;
 	padding-top: 70px;
+	padding-bottom: 30px;
 }
 
-ul.nav.navbar-nav li a{
+ul.nav.navbar-nav li a {
 	color: gray;
+}
+
+.user-page {
+
+	padding-top: 70px;
+	padding-bottom: 30px;
+	background-color: #828B2C;
+	border-radius: 5px;
+
+
+	/* Profile Page */
+	#profile-pic {
+		height: 100px;
+	}
+
+	#logs-wrap {
+		background-color: #A78381;
+	}
+
+	#logs-body {
+		background-color: #75634D;
+		padding-top: 20px;
+	}
+
+	#log-header {
+		background-color: #A78381;
+		color: #1A7B8E;
+		text-align: center;
+	}
+
+	#delete-wrap {
+		border: 3px red solid;
+		border-radius: 5px;
+	}
+
+	#delete {
+		color: red;
+	}
+
+	#edit-btn {
+		color: white;
+		background-color: #1A7B8E;
+	}
+
+
+	/* User Edit Page */
+	.form-wrapper {
+		border: 5px solid black;
+		border-radius: 10px;
+	}
+
+	#footer {
+		text-align: center;
+		margin-top: 20px;
+	}
+}
+
+#welcome-page {
+	background-color: #DBDBD9;
 }
