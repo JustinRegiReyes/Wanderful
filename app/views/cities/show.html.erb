@@ -34,7 +34,7 @@
 					<h5> By: <%= @user.first_name %> <%= @user.last_name[0] %>. </h5>
 					<span id="<%= log.address %>"></span>
 
-					<p> <%= log.content.truncate_words(10) %> <a href="/logs/<%= log.id %>"><small>(View More)</small></a>	</p>
+					<p id="<%= log.title %>-content"> <%= log.content.truncate_words(10) %> <a href="/logs/<%= log.id %>"><small>(View More)</small></a>	</p>
 				</div>
 				<% end %>
 			</div>
