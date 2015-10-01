@@ -1,11 +1,10 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top">
    <div class="container-fluid">
       <div class="navbar-header">
-         <a class="navbar-brand" href="/">Wanderful</a>
+         <a id="b" class="navbar-brand" href="/">Wanderful</a>
          <ul class="nav navbar-nav">
             <% if @current_user %>
-               <li> <small>Hello <%= @current_user.first_name %> <%= @current_user.last_name[0] %>.</small></li>
-               <li><%= link_to 'Home', "/users/#{@current_user.id}" %></li>
+               
                <li><%= link_to 'Logout', logout_path, method: 'delete'  %></li>
             <% else %>
                <li><%= link_to 'Sign Up', '/users/new'%></li>

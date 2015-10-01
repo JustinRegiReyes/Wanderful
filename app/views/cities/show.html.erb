@@ -1,24 +1,26 @@
  <% content_for :head do%>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoDzkQGQeZAOkijfEvvm3Y5brNqIIKWH8">
     </script>
+
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble.js">
+    </script>
  <% end %>
 
-<h1>Google Maps Tut</h1>
-<div id="map-container">
-  <div id="map-canvas"></div>
-</div>
-
-<div class="container">
-	<div class="page-header">
-		<header>
-			<h1 id="<%= @city.name %>"> <%= @city.name %> </h1>
-		</header>
+<div id="city-banner"></div>
+	<div class="heading-wrapper">
+		<div id="panel-heading">
+					<h2 id="<%= @city.name %>" class="city-name"> <%= @city.name %> <span>Travel Logs</span></h2>
+		</div>
 	</div>
 
-<div class="page-container">
+
 		<div class="panel panel-info">
-			<div class="panel-heading">
-				<h2>Travel Logs</h2>
+			<a href="#" id="gmap-link"> Map </a>
+
+			<div id="gmap" style="display: none"> test</div>
+
+			<div id="map-container">
+				<div id="map-canvas"></div>
 			</div>
 
 			<div class="panel-body">
@@ -31,11 +33,11 @@
 					<h5> By: <%= @user.first_name %> <%= @user.last_name[0] %>. </h5>
 					<span id="<%= log.address %>"></span>
 
-					<p> <%= log.content.truncate_words(10) %> <a href="/logs/<%= log.id %>"><small>(View More)</small></a>	</p>
+					<p id="<%= log.title.gsub(/ /, '-') %>"> <%= log.content.truncate_words(10) %> <a href="/logs/<%= log.id %>"><small>(View More)</small></a>	</p>
 				</div>
 				<% end %>
 			</div>
 		</div>
 		<%= link_to("Post Travel Log", city_log_new_path(@city)) %>
-	</div>
-</div>
+	
+
